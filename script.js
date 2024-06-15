@@ -1,19 +1,19 @@
 function cadastrar() {
   var nome = document.getElementById("nome").value;
-  var telefone = document.getElementById("telefone").value;
+ 
   var email = document.getElementById("email").value;
-  var senha = document.getElementById("senha").value;
+  
 
-  if (nome === "" || telefone === "" || email === "" || senha === "") {
+  if (nome === "" ||  email === "" ) {
     alert("Por favor, preencha todos os campos.");
     return;
   }
 
   var dados = {
     nome: nome,
-    telefone: telefone,
+    
     email: email,
-    senha: senha,
+    
   };
 
   fetch("http://localhost:8080/usuario", {
@@ -34,9 +34,9 @@ function cadastrar() {
       alert("Cadastro realizado com sucesso!");
       // Limpar os campos após o cadastro
       document.getElementById("nome").value = "";
-      document.getElementById("telefone").value = "";
+      
       document.getElementById("email").value = "";
-      document.getElementById("senha").value = "";
+      
     })
     .catch((error) => {
       console.error("Erro ao cadastrar:", error);
@@ -104,7 +104,7 @@ function exibirDados() {
       // Preencher a tabela com os novos dados
       data.forEach((usuario) => {
         var row = document.createElement("tr");
-        row.innerHTML = `<td>${usuario.nome}</td><td>${usuario.telefone}</td><td>${usuario.email}</td>`;
+        row.innerHTML = `<td>${usuario.nome}</td><td>${usuario.email}</td>`;
         document.getElementById("dadosBody").appendChild(row);
       });
     })
@@ -140,14 +140,14 @@ function excluirUsuario(userId) {
 function atualizarUsuario(userId) {
   // Obter os novos dados do usuário do formulário
   var novoNome = prompt("Novo nome:");
-  var novoTelefone = prompt("Novo telefone:");
+  
   var novoEmail = prompt("Novo email:");
 
   // Criar objeto com os novos dados
   var dadosAtualizados = {
     id: userId,
     nome: novoNome,
-    telefone: novoTelefone,
+   
     email: novoEmail,
   };
 

@@ -4,13 +4,13 @@
 }
 
 body {
-  background-color: bisque;
+  background-color: rgb(196, 255, 254);
 }
 body label {
   color: black;
 }
 body h1 {
-  color: black;
+  color: rgb(20, 11, 4);
   margin-top: 30px;
   margin-bottom: 20px;
 }
@@ -21,7 +21,7 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
 }
 
 input {
@@ -34,4 +34,9 @@ input {
 button {
   width: 150px;
   height: 25px;
+  border-radius: 30px;
 }
+
+
+
+
